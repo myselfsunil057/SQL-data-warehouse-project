@@ -3,12 +3,9 @@
 Create Database and Schemas
 ====================================================================================
 Script Purpose:
-    This script initializes the foundational structures of the data warehouse by:
-    Creating the main database for the project.
-    Defining schemas for each layer of the data pipeline:
-      Bronze: Raw ingested data, untransformed.
-      Silver: Cleaned and curated data ready for analytics.
-      Gold: Aggregated, business-ready datasets for reporting and BI.
+    This script creates a new database named 'DataWarehouse' after checking if it already exists.
+    If the database exists, if is dropped and recreated. Additionally, the script sets up three schemas
+    within the database: 'bronze', 'silver' and 'gold
 
 WARNING:
     Execute this script only once in your SQL Server environment.
