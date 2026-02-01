@@ -23,7 +23,6 @@ Usage Notes:
 
 -- Check For Nulls or Duplicates in Primary Key
 -- Expectation: No Result
-
 SELECT 
 	cst_id,
 	COUNT(*) AS Duplicates
@@ -33,7 +32,6 @@ HAVING COUNT(*)  > 1 OR cst_id IS NULL;
 
 -- Check for Unwanted Spaces
 -- Expectations: No Results
-
 SELECT cst_firstname
 FROM silver.crm_cust_info
 WHERE cst_firstname != TRIM(cst_firstname)
@@ -43,7 +41,6 @@ FROM silver.crm_cust_info
 WHERE cst_lastname != TRIM(cst_lastname)
 
 -- Data Standarization & Consistency
-
 SELECT DISTINCT(cst_gndr)
 FROM silver.crm_cust_info;
 
@@ -105,7 +102,6 @@ WHERE sls_order_dt > sls_ship_dt OR sls_order_dt > sls_due_dt
 -- Check Data Consistency: Between Sales, Quantity and Price 
 -- >> Sales = Quantity * Price
 -- >> Values must not be NULL, zero or Negative.
-
 SELECT
 sls_sales,
 sls_quantity,
@@ -135,7 +131,6 @@ FROM silver.erp_cust_az12
 -- =================================================================================
 
 -- Data Standarization & Consistency
-
 SELECT
 DISTINCT(cntry)
 FROM silver.erp_loc_a101;
@@ -155,5 +150,3 @@ OR maintenance != TRIM(maintenance)
 -- Data Standarization & Consistency
 SELECT DISTINCT maintenance 
 FROM silver.erp_px_cat_g1v2
-
--------------------------------------------------------------------------------------
